@@ -13,6 +13,7 @@
   ],
   "author": "Patrick Tamstrup <patrick@tamstrup.com>",
   "license": "ISC",
+  "repository": "patrkris/migstr",
   "keywords": [
     "nostr",
     "migration",
