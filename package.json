@@ -12,7 +12,7 @@
     "index.js"
   ],
   "author": "Patrick Tamstrup <patrick@tamstrup.com>",
-  "license": "ISC",
+  "license": "Unlicense",
   "repository": "patrkris/migstr",
   "keywords": [
     "nostr",
