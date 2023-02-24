@@ -3,13 +3,6 @@
 import WebSocket from 'ws'
 import crypto from 'crypto';
 
-const uuid = () => {
-  const buf = crypto.randomBytes(16);
-  buf[6] = (buf[6] & 0x0f) | 0x40;
-  buf[8] = (buf[8] & 0x3f) | 0x80;
-  return buf.toString('hex').match(/.{1,8}/g).join('-');
-};
-
 const pubid = process.argv[2]
     , srcs = process.argv.slice(3)
 
@@ -45,7 +38,7 @@ const pull = (relay) => {
         }
       })
       ws.on('open', async () => {
-        subid = uuid()
+        subid = crypto.randomUUID()
         await send(ws, ['REQ', subid, { authors: [pubid] }])
       })
       ws.on('close', () => unresolved && resolve(events))
